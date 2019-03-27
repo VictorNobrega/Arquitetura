@@ -1,14 +1,31 @@
 package br.cesed.arquitetura.order.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "produtos")
 public class Produto {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_produto")
 	private Long id;
+	
+	@Column(name = "nome")
 	private String nome;
+	
+	@Column(name = "preco")
 	private Double preco;
+	
+	@Column(name = "quantidade")
 	private Integer quantidade;
+	
+	@Column(name = "descricao")
 	private String descricao;
 
 	public Long getId() {
